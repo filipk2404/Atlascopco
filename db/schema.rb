@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327144309) do
+ActiveRecord::Schema.define(version: 20180404100053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "item_code"
+    t.string "description"
+    t.string "extra_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "lenght"
+    t.integer "width"
+    t.integer "height"
+    t.integer "weight"
+    t.string "stocking"
+    t.string "picking"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,6 +42,9 @@ ActiveRecord::Schema.define(version: 20180327144309) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.binary "user_avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
