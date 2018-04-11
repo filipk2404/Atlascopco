@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [ :show, :edit, :update, :destroy ]
+
+
   def new
   end
 
@@ -20,4 +24,12 @@ class ItemsController < ApplicationController
 
   def show
   end
+
+  def set_item
+      @item = Item.find(params[:id])
+    end
+
+    def item_params
+      params.require(:item).permit(:description, :extra_description, :lenght, :width, :height, :weight, :stocking, :picking)
+    end
 end
