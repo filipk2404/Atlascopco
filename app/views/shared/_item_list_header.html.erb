@@ -1,67 +1,70 @@
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="box">
-              <div class="box-header with-border">
-                <h3 class="box-title">Items (0)</h3>
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th>Item </th>
-                      <th>Description</th>
-                      <th>Extra description</th>
-                      <th>L</th>
-                      <th>l</th>
-                      <th>h</th>
-                      <th>Weight</th>
-                      <th>Stock method</th>
-                      <th>Picking method</th>
-                      <th>
-                        <i class="ion ion-trash-b"></i>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                     <% @items.each do |item| %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Items (0)</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Item </th>
+              <th>Description</th>
+              <th>Extra description</th>
+              <th>L</th>
+              <th>l</th>
+              <th>h</th>
+              <th>Weight</th>
+              <th>Stock method</th>
+              <th>Picking method</th>
+              <th>
+                <i class="ion ion-trash-b"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% button_id = 1 %>
+            <% @items.each do |item| %>
 
 
-                       <div class="row">
+            <div class="row"  >
 
-                    <tr>
+              <tr>
 
-                      <th><%= "#{item.item_code}" %></th>
+                <th id= <%= "item#{button_id}" %>> <%= "#{item.item_code}" %></th>
 
-                                 <th><%= "#{item.description}" %></th>
-                                 <th><%= "#{item.extra_description}" %></th>
-                                 <th><%= "#{item.lenght}" %></th>
-                                 <th><%= "#{item.width}" %></th>
-                                 <th><%= "#{item.height}" %></th>
-                                 <th><%= "#{item.weight}" %></th>
-                                 <th><%= "#{item.stocking}" %></th>
-                                 <th><%= "#{item.picking}" %></th>
+                <th><%= "#{item.description}" %></th>
+                <th><%= "#{item.extra_description}" %></th>
+                <th><%= "#{item.lenght}" %></th>
+                <th><%= "#{item.width}" %></th>
+                <th><%= "#{item.height}" %></th>
+                <th><%= "#{item.weight}" %></th>
+                <th><%= "#{item.stocking}" %></th>
+                <th><%= "#{item.picking}" %></th>
 
-                                 <th>
-                               <% if item.lenght == 0 || item.width == 0 || item.height == 0 || item.weight == 0 || item.stocking == nil || item.picking == 0%>
-                                   <i><button class=" btn-round nok">NOK</button></i>
-                                  <% else %>
-                                  <i><button class=" btn-round ok">OK</button></i>
-                                  <% end %>
-                                 </th>
+                <th>
+                 <% if item.lenght == 0 || item.width == 0 || item.height == 0 || item.weight == 0 || item.stocking == nil || item.picking == 0%>
+                 <i><button id= <%= button_id %> class=" btn-round nok" onClick="reply_click(this.id)">NOK</button></i>
+                 <% else %>
+                 <i><button id= <%= button_id %> class=" btn-round ok" onClick="reply_click(this.id)">OK</button></i>
 
-                               </tr>
+                 <% end %>
+               </th>
 
-                             </div>
+             </tr>
 
-                             <% end %>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- /.box -->
-          </div>
-          <!-- ./col -->
-        </div>
+           </div>
+           <% button_id = button_id + 1 %>
+           <% end %>
+         </tbody>
+       </table>
+     </div>
+   </div>
+   <!-- /.box -->
+ </div>
+ <!-- ./col -->
+</div>
+
 

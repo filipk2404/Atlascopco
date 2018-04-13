@@ -3,24 +3,32 @@
 
 
        const buttons = document.getElementsByClassName("btn-round")
+       const item = "item"
+
 
        Array.from(buttons).forEach((b) => {
 
  // add event on each button
 
  b.addEventListener("click", (event) => {
-   //Button.classList.add("blue");
+   var id = item.concat(event.target.id);
 
-   b.classList.toggle("ok")
+   var elem = document.getElementById(id);
 
-   alert("here!");
+   console.log(elem.innerText)
 
-   if (b.innerText === "OK") {;
 
-    b.innerText ="NOK";
-  } else {
-    b.innerText = "OK";
-  }
+    $.ajax({
+     type: "GET",
+     url: "/edit/1",
+     // data: elem.innerText
+     success: function(id){
+       alert("Hole ID:"+ id );
+     }
+   });
+
+   alert(elem.innerText);
+
 });
 });
 
