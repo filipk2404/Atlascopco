@@ -5,6 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#  connect do sql database cr
+
+
+require 'sequel'
+db = Sequel.odbc(:drvconnect=>'driver={IBM i Access ODBC Driver};system=ATCOAICA;database=ATCOAICA;uid=CRPPKR;password=Tekno1804;DefaultLibraries=, JEBPCSF;authentication=server')
+tables = db[:QSYS2__SYSTABLES].where("TABLE_NAME like ?", "IIM%")
+tables.each do |record|
+  puts record[:table_name]
+end
+
+return
+
+
 puts "starting Itemseed"
 
 Item.delete_all
