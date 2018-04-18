@@ -15,19 +15,14 @@
 
    var elem = document.getElementById(id);
 
-   console.log(elem.innerText)
-
+const target_url =  "/items/".concat(event.target.id).concat("/edit")
 
     $.ajax({
      type: "GET",
-     url: "/items/751/edit",
-    // data: elem.innerText
-     // success: function(id){
-     //   alert("Hole ID:"+ id );
-     // }
+     url: target_url,
+     success: function(),
    });
 
-   alert(elem.innerText);
 
 });
 });
