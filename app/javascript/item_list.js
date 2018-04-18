@@ -20,11 +20,11 @@
 
     $.ajax({
      type: "GET",
-     url: "/edit/1",
-     // data: elem.innerText
-     success: function(id){
-       alert("Hole ID:"+ id );
-     }
+     url: "/items/751/edit",
+    // data: elem.innerText
+     // success: function(id){
+     //   alert("Hole ID:"+ id );
+     // }
    });
 
    alert(elem.innerText);

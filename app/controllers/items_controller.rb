@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    fail
   end
 
   def destroy
