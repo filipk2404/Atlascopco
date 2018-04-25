@@ -5,30 +5,88 @@
 
       <!-- Main content -->
 <section class="content">
-         <!-- Small boxes (Stat box) -->
     <div class="row" >
+      <!-- all items -->
       <div class="col-lg-1">
             <!-- small box -->
-        <div class="btn btn-primary" style="height: 30%">
-            <h3><% 'A' + (Item.count + 1).to_s %></h3>
-            <i class="fa fa-home"></i>
-            <p>items</p>
+        <div class="btn" style="width: 150px ; background:lightgrey"; onclick="display_items('all')">
+            <h4><%=(Item.count).to_s%></h4>
+            <h4>items</h4>
+            <i class="fa fa-home" style = "font-size:36px;color:#008cff"></i>
+            <h5>(All)</h5>
         </div>
       </div>
-
+<!-- incomplete items -->
       <div class="col-lg-1">
               <!-- small box -->
-          <div class="btn btn-primary">
-              <h3>20627</h3>
-              <i class="fa fa-home"></i>
-              <p>items </p>
+          <% @incomplete = (Item.count).to_s %>
+          <div class="btn" style="width: 150px ; background:lightgrey" >
+              <h4><%= @incomplete %></h4>
+              <h4>items</h4>
+              <i class="fa fa-thumbs-o-down" style = "font-size:36px;color:orange"></i>
+              <h5>(Incomplete)</h5>
           </div>
+      </div>
+<!-- completed items -->
+          <div class="col-lg-1">
+                  <!-- small box -->
+              <% @completed = (Item.count).to_s %>
+              <div class="btn" style="width: 150px; background:lightgrey" >
+                  <h4><%= @completed %></h4>
+                  <h4>items</h4>
+                  <i class="fa fa-thumbs-o-up" style = "font-size:36px;color:#189b25"></i>
+                  <h5>(Completed)</h5>
+              </div>
+          </div>
+          <!-- wharehouse organisation all locations -->
+          <div class="col-lg-1">
+                  <!-- small box -->
+              <div class="btn" style="width: 150px ; background:lightgrey" >
+                  <h4> 999 </h4>
+                  <h4>locations</h4>
+                  <i class="fa fa-industry" style = "font-size:36px;color:#008cff"></i>
+                  <h5> (All) </h5>
+              </div>
+          </div>
+          <!-- wharehouse organisation free locations -->
+          <div class="col-lg-1">
+                  <!-- small box -->
+              <div class="btn " style="width: 150px ; background:lightgrey">
+
+                  <h4> 999 </h4>
+                  <h4>locations</h4>
+                  <i class="fa fa-industry" style = "font-size:36px;color:#189b25"></i>
+                  <h5> (Free) </h5>
+              </div>
+          </div>
+          <!-- wharehouse organisation free locations -->
+          <div class="col-lg-1">
+                  <!-- small box -->
+              <div class="btn" style="width: 150px ; background:lightgrey" >
+                  <h4> 999 </h4>
+                  <h4>locations</h4>
+                  <i class="fa fa-industry" style = "font-size:36px;color:orange"></i>
+                  <h5> (Occupied) </h5>
+              </div>
+          </div>
+
 
       </div>
           <!-- ./col -->
     </div>
        <!-- /.row -->
 </section>
+
+<script>
+function display_items(type)
+console.log(type)
+if (type = 'all') {
+ location.href = "/items";
+ } else {
+ alert 'ot ok' ;
+  }
+}
+</script>
 
 
         <div class="row">

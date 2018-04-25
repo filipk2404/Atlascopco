@@ -16,7 +16,6 @@
    var elem = document.getElementById(id);
 
 const target_url =  "/items/".concat(event.target.id)
-console.log(target_url)
 window.location.assign(target_url)
 
 });
