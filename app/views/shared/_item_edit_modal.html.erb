@@ -1,0 +1,35 @@
+
+
+
+    <h2>Update items datas</h2>
+
+
+
+<div class="container">
+  <div class="center">
+
+
+
+
+          <%= simple_form_for @item, html: { class: "item_form"} do |f|  %>
+          <%= f.input :description, label: "Description"   %>
+          <%= f.input :extra_description, label: "Extra descriotion" %>
+
+          <%= f.input :lenght, label: "lenght" %>
+          <%= f.input :width, label: "width" %>
+          <%= f.input :height, label: "height" %>
+          <%= f.input :stocking, label: "stocking Method", collection: ["Pallet", "Xbin"] %>
+          <%= f.input :picking, label: "picking Method", collection: ["Picking", "Forklift"] %>
+
+          <%= f.button :submit, "Enregistrer", class:"btn btn-primary" %>
+          <%= link_to "Retour", item_path(@item), class:"btn btn-primary" %>
+          <% end %>
+
+
+
+
+
+
+ </div>
+</div>
+

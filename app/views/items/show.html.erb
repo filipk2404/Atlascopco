@@ -1,2 +1,33 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+
+<!-- Button trigger modal -->
+
+<div class="container">
+  <div class = "row">
+    <div class="col-sm-6">
+      <%= image_tag "img.svg",  style: "height: auto; width: 80%; padding:1px; border:1px solid #021a40; "%>
+    </div>
+    <div class="col-sm-6">
+
+      <%= simple_form_for @item, html: { class: "item_form"} do |f|  %>
+
+        <%= f.input :description, label: "Description"   %>
+
+        <%= f.input :extra_description, label: "Extra description" %>
+
+        <%= f.input :lenght, label: "lenght"  %>
+        <%= f.input :width, label: "width" %>
+        <%= f.input :height, label: "height" %>
+        <%= f.input :weight, label: "weight" %>
+        <%= f.input :stocking, label: "stocking Method", collection: ["Pallet", "Xbin"] %>
+        <%= f.input :picking, label: "picking Method", collection: ["Picking", "Forklift"] %>
+
+        <%= f.button :submit, "Save", class:"btn btn-primary" %>
+        <%= link_to "cancel", items_path, class:"btn btn-primary"  %>
+        <% end %>
+
+
+    </div>
+  </div>
+</div>
+
+

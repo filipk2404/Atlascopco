@@ -4,64 +4,30 @@
 
 
       <!-- Main content -->
-      <section class="content">
-
-        <div class = "container">
+<section class="content">
          <!-- Small boxes (Stat box) -->
-        <div class="row">
-
-          <div class="col-lg-2 col-xs-6">
+    <div class="row" >
+      <div class="col-lg-1">
             <!-- small box -->
-            <div class="btn btn-primary">
-            <h3>20627</h3>
-                <i class="fa fa-home"></i>
-                <p>Total items </p>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="btn btn-success">
-                <h3>20387</h3>
-                <i class="fa fa-search"></i>
-                <p>Items Available</p>
-            </div>
-          </div>
-
-          <!-- ./col -->
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="btn btn-warning">
-                <h3>240</h3>
-                <i class="fa fa-barcode"></i>
-                <p>Items Unavailable</p>
-              </div>
-            </div>
-
-            <!-- ./col -->
-            <div class="col-lg-2 col-xs-6">
-              <!-- small box -->
-              <div class="btn btn-warning">
-                  <h3>240</h3>
-                  <i class="fa fa-barcode"></i>
-                  <p>Items Unavailable</p>
-                </div>
-              </div>
-
-
-          <!-- ./col -->
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="btn btn-danger">
-                <h3>0</h3>
-                <i class="fa fa-barcode"></i>
-                <p>Purchase Orders</p>
-            </div>
-          </div>
-          <!-- ./col -->
+        <div class="btn btn-primary" style="height: 30%">
+            <h3><% 'A' + (Item.count + 1).to_s %></h3>
+            <i class="fa fa-home"></i>
+            <p>items</p>
         </div>
-        <!-- /.row -->
-</div>
+      </div>
+
+      <div class="col-lg-1">
+              <!-- small box -->
+          <div class="btn btn-primary">
+              <h3>20627</h3>
+              <i class="fa fa-home"></i>
+              <p>items </p>
+          </div>
+
+      </div>
+          <!-- ./col -->
+    </div>
+       <!-- /.row -->
 </section>
 
 

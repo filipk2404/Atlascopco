@@ -10,6 +10,8 @@ class ItemsController < ApplicationController
   end
 
   def update
+   @item.update(item_params)
+   redirect_to items_path
   end
 
   def edit
@@ -19,7 +21,17 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.first(15)
+
+    if params[:query].present?
+
+      @items =  Item.where("item_code LIKE '#{params[:query]}%'" )
+
+            else
+      @items = Item.order(:item_code).first(15)
+
+        end
+
+
   end
 
   def show

@@ -15,14 +15,9 @@
 
    var elem = document.getElementById(id);
 
-const target_url =  "/items/".concat(event.target.id).concat("/edit")
-
-    $.ajax({
-     type: "GET",
-     url: target_url,
-     success: function(),
-   });
-
+const target_url =  "/items/".concat(event.target.id)
+console.log(target_url)
+window.location.assign(target_url)
 
 });
 });
