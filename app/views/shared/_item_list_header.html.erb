@@ -44,9 +44,9 @@
 
                 <th>
                  <% if item.lenght == 0 || item.width == 0 || item.height == 0 || item.weight == 0 || item.stocking == nil || item.picking == 0%>
-                 <i><button id= <%= button_id %> class=" btn-round nok" onClick="reply_click(this.id)">NOK</button></i>
+                 <i><button id= <%= button_id %> class=" btn-round nok" >NOK</button></i>
                  <% else %>
-                 <i><button id= <%= button_id %> class=" btn-round ok" onClick="reply_click(this.id)">OK</button></i>
+                 <i><button id= <%= button_id %> class=" btn-round ok" >OK</button></i>
 
                  <% end %>
                </th>
