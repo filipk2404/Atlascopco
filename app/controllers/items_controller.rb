@@ -70,7 +70,13 @@ end
     end
 
     def clean_url
+      if request.original_url.include? "?"
       @list_items = request.original_url.last(request.original_url.size - request.original_url.index("?") - 1)
+      fail
+    else
+    @list_items = request.original_url
+    fail
+    end
     end
 
     def item_params
